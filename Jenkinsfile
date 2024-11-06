@@ -1,4 +1,4 @@
-def # [
+def [
     'SUCCESS': 'good',
     'FAILURE': 'danger',
 ]
