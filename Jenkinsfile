@@ -1,3 +1,8 @@
+def # [
+    'SUCCESS': 'good',
+    'FAILURE': 'danger',
+]
+
 pipeline {
     agent any
     tools {
@@ -20,6 +25,11 @@ pipeline {
     }
 
     stages {
+        stage('Fetch code') {
+            steps{
+                git branch: 'ci-jenkins', url:'https://github.com/Atoyebi-410/jenkins-continuous-integrations.git'
+            }
+        }
         stage('Build'){
             steps {
                 sh 'mvn -s settings.xml -DskipTests install'
@@ -82,5 +92,13 @@ pipeline {
             }
         }
 
+    }
+    post {
+        always {
+            echo 'Slack Notifications.'
+            slackSend channel: '#jenkinscicd',
+                color: COLOR_MAP[currentBuild.currentResult],
+                message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+        }
     }
 }
