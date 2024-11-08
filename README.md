@@ -44,14 +44,15 @@ The pipeline follows these main stages:
 - **Command**: `mvn -s settings.xml -DskipTests install`
 - **Outcome**: If successful, the build artifact (`.war` file) is archived within Jenkins.
 
-![Jenkins Build Job](path/to/your/jenkins-build-job-screenshot.png)
-![Pipeline Stages in Jenkins](path/to/your/pipeline-stages-screenshot.png)
+![Jenkins Build Job](images/build%20job%20page.png)
+![Pipeline Stages in Jenkins](images/pipeline%20stages.png)
 
 ### Unit Test
 - **Description**: Runs unit tests on the project.
 - **Command**: `mvn -s settings.xml test`
 - **Outcome**: Confirms the project’s basic functionality and reliability.
 
+![Sonarqube Code Analysis](images/code%20analysis.png)
 ### Code Quality Analysis with SonarQube
 - **Description**: Executes a static code analysis to detect code smells, bugs, and vulnerabilities.
 - **Command**:
@@ -96,6 +97,7 @@ The pipeline follows these main stages:
 - **Outcome**: Artifacts are stored in Nexus and versioned by build timestamp for easy access and traceability.
 
 ### Slack Notification
+![Slack Notification](images/slack%20notification.png)
 
 - **Description**: Sends the build status to a Slack channel, notifying the team.
 - **Code**:
