@@ -140,7 +140,7 @@ The pipeline follows these main stages:
 
 2. **Video 2**: Shows the automatic build process after a commit, along with the code analysis results on SonarQube.
 
-![Walk Through](https://www.youtube.com/watch?v=YkoMXspAGJk)
+[![Video Walkthrough](https://img.youtube.com/vi/YkoMXspAGJk)](https://www.youtube.com/watch?v=YkoMXspAGJk)
 
 ## Conclusion
 
