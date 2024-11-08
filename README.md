@@ -92,3 +92,40 @@ The pipeline follows these main stages:
         type: 'war']
     ]
   )
+
+- **Outcome**: Artifacts are stored in Nexus and versioned by build timestamp for easy access and traceability.
+
+### Slack Notification
+
+- **Description**: Sends the build status to a Slack channel, notifying the team.
+- **Code**:
+  ```sh
+  slackSend channel: '#jenkinscicd',
+           color: COLOR_MAP[currentBuild.currentResult],
+           message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+
+- **Outcome**: Real-time notifications about the build status keep the team updated.
+
+## Deployment and Configuration Steps
+### Jenkins Setup
+
+- **Installed required plugins**: Maven Integration, GitHub Integration, Nexus Artifact Uploader, SonarQube Scanner, Slack Notification, Build Timestamp.
+- Configured Maven and JDK paths for Oracle JDK8 and JDK11.
+- Added SonarQube and Slack credentials for integration.
+
+### Nexus Setup
+
+- Created repositories for release, snapshot, and proxy storage:
+    - vprofile-release: Maven2 (hosted)
+    - vprofile-snapshot: Maven2 (hosted)
+    - vpro-maven-central: Maven2 (proxy)
+    - vpro-maven-group: Maven2 (group)
+
+### SonarQube Setup
+
+- Generated a SonarQube token and configured it in Jenkins for authentication.
+
+### Slack Setup
+
+- Integrated Jenkins with a dedicated Slack workspace and channel.
+    Configured a webhook in GitHub to trigger the pipeline on every commit.
