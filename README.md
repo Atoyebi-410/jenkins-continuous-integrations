@@ -136,7 +136,7 @@ The pipeline follows these main stages:
 
 1. **Video 1**: Demonstrates a commit triggering an automated pipeline build with a successful outcome.
 
-![Walk Through](https://www.youtube.com/watch?v=Gol38aH_f74)
+[![Video Walkthrough]](https://www.youtube.com/watch?v=Gol38aH_f74)
 
 2. **Video 2**: Shows the automatic build process after a commit, along with the code analysis results on SonarQube.
 
