@@ -64,3 +64,11 @@ The pipeline follows these main stages:
   -Dsonar.junit.reportsPath=target/surefire-reports/ \
   -Dsonar.jacoco.reportsPath=target/jacoco.exec \
   -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
+
+
+- **Outcome**: Generates a detailed report, accessible in the SonarQube dashboard.
+
+### Quality Gate
+- **Description**: Uses SonarQube’s quality gate to determine if the code meets predefined quality standards.
+- **Command**: waitForQualityGate abortPipeline: true
+- **Outcome**: If the code fails the quality gate, the pipeline halts, notifying the team to address issues.
