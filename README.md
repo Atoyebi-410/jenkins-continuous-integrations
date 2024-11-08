@@ -33,7 +33,7 @@ Three AWS EC2 instances were configured, each running a dedicated tool:
    - Security Group: Sonar-SG
    - Inbound Rules: SSH (port 22), HTTP (port 80)
 
-![AWS EC2 Instances](path/to/your/aws-ec2-instances-screenshot.png)
+![AWS EC2 Instances](images/ec2%20instances.png)
 
 ## Pipeline Workflow and Explanation
 
@@ -129,3 +129,13 @@ The pipeline follows these main stages:
 
 - Integrated Jenkins with a dedicated Slack workspace and channel.
     Configured a webhook in GitHub to trigger the pipeline on every commit.
+
+## Demonstration Videos
+
+1. **Video 1**: Demonstrates a commit triggering an automated pipeline build with a successful outcome.
+
+2. **Video 2**: Shows the automatic build process after a commit, along with the code analysis results on SonarQube.
+
+## Conclusion
+
+This project demonstrates a full CI/CD pipeline setup in a DevOps environment, showcasing skills in CI automation, artifact management, code quality checks, and notification integration. It emphasizes real-world skills in cloud-based DevOps using Jenkins, Nexus, SonarQube, and Slack on AWS.
