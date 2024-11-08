@@ -72,3 +72,23 @@ The pipeline follows these main stages:
 - **Description**: Uses SonarQube’s quality gate to determine if the code meets predefined quality standards.
 - **Command**: waitForQualityGate abortPipeline: true
 - **Outcome**: If the code fails the quality gate, the pipeline halts, notifying the team to address issues.
+
+### Artifact Upload to Nexus
+- **Description**: Uploads the built artifact to a Nexus repository for centralized management.
+- **Code**:
+  ```sh
+  nexusArtifactUploader(
+    nexusVersion: 'nexus3',
+    protocol: 'http',
+    nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
+    groupId: 'QA',
+    version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
+    repository: "${RELEASE_REPO}",
+    credentialsId: "${NEXUS_LOGIN}",
+    artifacts: [
+        [artifactId: 'vproapp',
+        classifier: '',
+        file: 'target/vprofile-v2.war',
+        type: 'war']
+    ]
+  )
