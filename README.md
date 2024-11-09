@@ -3,6 +3,8 @@
 ## Project Overview
 This project implements a Continuous Integration (CI) pipeline that automates code building, testing, quality analysis, artifact management, and notification processes. The pipeline is designed to execute for every code commit, ensuring faster detection and resolution of issues, and maintaining high code quality standards.
 
+![Architectural Design](images/Continuous%20Integration%20Using%20Jenkins,Nexus,Sonarqube&%20Slack.png)
+
 ## Key Objectives and Solutions
 1. **Automated Build and Test**: Trigger builds for each commit, compile code, run tests, and package artifacts automatically.
 2. **Centralized Artifact Repository**: Store generated artifacts in a Nexus repository for easy management and deployment.
